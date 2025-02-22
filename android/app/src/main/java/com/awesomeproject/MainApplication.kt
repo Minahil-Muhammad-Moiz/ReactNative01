@@ -1,4 +1,4 @@
-package com.awesomeproject
+package com.ReactNative01
 
 import android.app.Application
 import com.facebook.react.PackageList
