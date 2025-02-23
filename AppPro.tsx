@@ -2,7 +2,7 @@ import React, { JSX } from 'react';
 import { SafeAreaView, ScrollView, Text, StyleSheet, useColorScheme, View, } from 'react-native';
 
 function AppPro(): JSX.Element {
-    const isDarkMode = useColorScheme() === 'light';
+    const isDarkMode = useColorScheme() === 'dark';
 
     return (
         // <SafeAreaView>
@@ -24,12 +24,10 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     darkMode: {
-        backgroundColor: '#000000',
         color: '#FFFFFF',
         fontStyle: 'italic',
     },
     lightMode: {
-        backgroundColor: '#FFFFFF',
         color: '#000000'
     }
 })
