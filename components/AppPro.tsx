@@ -8,10 +8,6 @@ function AppPro(): JSX.Element {
         // <SafeAreaView>
             <View style={styles.container}>
                 <Text style={isDarkMode ? styles.darkMode : styles.lightMode}>HELLO WORLD!!</Text>
-                <Text>HELLO WORLD!!</Text>
-                <Text>HELLO WORLD!!</Text>
-                <Text>HELLO WORLD!!</Text>
-                <Text>HELLO WORLD!!</Text>
             </View>
         // </SafeAreaView>
     )
