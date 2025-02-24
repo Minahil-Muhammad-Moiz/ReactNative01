@@ -29,25 +29,26 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: '#fff',
         fontWeight: 'bold',
-        paddingHorizontal: 20,
+        // paddingHorizontal: 20,
     },
     whiteText: {
         color: '#fff'
     },
     container: {
-        paddingHorizontal: 20,
+        padding: 8,
         flex: 1,
-        alignItems:'center',
+        alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'row'
     },
     card: {
         height: 100,
-        width: '20%',
-        margin: 8,
+        // width: '20%',
+        margin: 4,
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        color: '#ffffff'
     },
     cardOne: {
         backgroundColor: 'red',
