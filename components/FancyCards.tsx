@@ -6,13 +6,13 @@ export default function FancyCards() {
         <View>
             <Text style={styles.headingText}>Trending Places</Text>
             <View style={[styles.card, styles.cardElevated]}>
-                <Image source={{ uri: 'https://images.unsplash.com/photo-1739000247558-bc6b37b84d64?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyfHx8ZW58MHx8fHx8' }}
+                <Image source={{ uri: 'https://images.unsplash.com/photo-1740007124901-6644ebaa3c08?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8' }}
                     style={styles.cardImage} />
                 <View style={styles.cardBody}>
-                    <Text style={styles.cardTitle}>Building</Text>
+                    <Text style={styles.cardTitle}>Mountains</Text>
                     <Text style={styles.cardLocation}>Pakistan</Text>
-                    <Text style={styles.cardDesc}>Building in Pakistan</Text>
-                    <Text style={styles.cardFooter}>Visited 12 Days Ago</Text>
+                    <Text style={styles.cardDesc}>Northen areas in Pakistan.</Text>
+                    <Text style={styles.cardFooter}>Visited 12 Days Ago..</Text>
                 </View>
             </View>
             {/* <Image source={{ uri: 'https://images.unsplash.com/photo-1740007124901-6644ebaa3c08?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8' }}
@@ -29,31 +29,35 @@ const styles = StyleSheet.create({
         // paddingHorizontal: 20,
     },
     card: {
-        borderWidth: 5,
-        padding: 8,
-
+        borderWidth: 3,
+        borderRadius: 10,
+        overflow: 'hidden',
     },
     cardElevated: {},
     cardImage: {
-        width: 130,
         height: 200,
         objectFit: 'cover',
-        borderRadius: 10,
+        width: '100%',
     },
     cardBody: {
-        borderWidth: 4,
+        backgroundColor: '#fff',
+        padding: 10,
     },
     cardTitle: {
-        color: "#fff",
-
+        fontSize: 25,
+        fontWeight: 'bold',
     },
     cardLocation: {
-        color: "#fff",
+        fontSize: 19,
     },
     cardDesc: {
-        color: "#fff",
+        fontSize: 16,
     },
     cardFooter: {
-        color: "#fff",
+        fontSize: 12,
+        color: 'grey',
+        fontStyle: 'italic',
+        marginTop: 20,
+        textAlign: 'right',
     }
 })
