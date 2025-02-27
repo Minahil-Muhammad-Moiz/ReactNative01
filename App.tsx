@@ -4,6 +4,7 @@ import FlatCard from './components/FlatCard'
 import AppPro from './components/AppPro'
 import ElevatedCards from './components/ElevatedCards'
 import FancyCards from './components/FancyCards'
+import ActionCards from './components/ActionCards'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <FlatCard />
         <ElevatedCards />
         <FancyCards/>
+        <ActionCards/> 
       </ScrollView>
     </SafeAreaView>
   )
