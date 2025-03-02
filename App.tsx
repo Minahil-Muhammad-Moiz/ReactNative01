@@ -5,15 +5,15 @@ import AppPro from './components/AppPro'
 import ElevatedCards from './components/ElevatedCards'
 import FancyCards from './components/FancyCards'
 import ActionCards from './components/ActionCards'
+import PasswordGenerator from './components/PasswordGenerator'
 
 const App = () => {
   return (
     <SafeAreaView style={[styles.container]}>
       <ScrollView>
-        <FlatCard />
+        <PasswordGenerator />
         <ElevatedCards />
-        <FancyCards/>
-        <ActionCards/> 
+        <ActionCards />
       </ScrollView>
     </SafeAreaView>
   )
