@@ -6,11 +6,13 @@ import ElevatedCards from './components/ElevatedCards'
 import FancyCards from './components/FancyCards'
 import ActionCards from './components/ActionCards'
 import PasswordGenerator from './components/PasswordGenerator'
+import BgChanger from './components/BgChanger'
 
 const App = () => {
   return (
     <SafeAreaView style={[styles.container]}>
       <ScrollView>
+        <BgChanger/>
         <PasswordGenerator />
         <ElevatedCards />
         <ActionCards />
