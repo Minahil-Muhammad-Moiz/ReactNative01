@@ -7,12 +7,14 @@ import FancyCards from './components/FancyCards'
 import ActionCards from './components/ActionCards'
 import PasswordGenerator from './components/PasswordGenerator'
 import BgChanger from './components/BgChanger'
+import DiceProject from './components/DiceProject'
 
 const App = () => {
   return (
     <SafeAreaView style={[styles.container]}>
       <ScrollView>
-        <BgChanger/>
+        <DiceProject />
+        <BgChanger />
         <PasswordGenerator />
         <ElevatedCards />
         <ActionCards />
