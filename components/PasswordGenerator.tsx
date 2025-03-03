@@ -97,7 +97,7 @@ export default function PasswordGenerator() {
                                         fillColor='#29AB87' />
                                 </View>
                                 <View style={styles.inputWrapper}>
-                                    <Text style={styles.labelText}>Include LowerCase</Text>
+                                    <Text style={styles.labelText}>Include UpperCase</Text>
                                     <BouncyCheckbox
                                         useBuiltInState={false}
                                         isChecked={uppercase}
@@ -126,7 +126,7 @@ export default function PasswordGenerator() {
                                         disabled={!isValid}
                                         style={styles.primaryBtn}
                                         onPress={() => { handleSubmit(); }}>
-                                        <Text>Generate Password</Text>
+                                        <Text style={styles.primaryBtnText}>Generate Password</Text>
                                     </TouchableOpacity>
                                     <TouchableOpacity
                                         style={styles.secBtn}
@@ -135,13 +135,20 @@ export default function PasswordGenerator() {
                                             resetPassword();
                                         }}
                                     >
-                                        <Text>Reset</Text>
+                                        <Text style={styles.secBtnText}>Reset</Text>
                                     </TouchableOpacity>
                                 </View>
                             </>
                         )}
                     </Formik>
                 </View>
+                {isPasswordGenerated ? (
+                    <View style={styles.resultContainer}>
+                        <Text style={styles.resultLabel}>RESULTS:</Text>
+                        <Text style={styles.intructionText}>Long press to copy</Text>
+                        <Text selectable={true} style={styles.passwordText}>{password}</Text>
+                    </View>
+                ) : null}
             </SafeAreaView>
 
         </ScrollView>
@@ -149,15 +156,76 @@ export default function PasswordGenerator() {
 }
 
 const styles = StyleSheet.create({
-    appContainer: {},
-    formContainer: {},
-    headingText: {},
-    inputWrapper: {},
-    inputColumn: {},
-    labelText: {},
-    errorMsg: {},
-    inputStyle: {},
-    formActions: {},
-    primaryBtn: {},
-    secBtn: {}
+    appContainer: {
+        // borderWidth: 2,
+        paddingVertical: 20,
+    },
+    formContainer: {
+        // borderWidth: 2,
+    },
+    headingText: {
+        // borderWidth: 2,
+        fontSize: 20,
+        color: '#fff',
+    },
+    inputWrapper: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        marginVertical: 4,
+        // alignItems: 'baseline',
+    },
+    inputColumn: {
+        // borderWidth: 2,
+    },
+    labelText: {
+        color: '#fff',
+        fontSize: 15,
+    },
+    errorMsg: {
+        color: 'red',
+    },
+    inputStyle: {
+        borderWidth: 2,
+        paddingHorizontal: 20,
+        borderRadius: 10,
+        color: '#fff'
+    },
+    formActions: {
+        display: 'flex',
+        flexDirection: 'row',
+        gap: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: 20,
+    },
+    primaryBtn: {
+        backgroundColor: 'skyblue',
+        padding: 10,
+        fontSize: 20,
+        borderRadius: 10
+    },
+    primaryBtnText: {},
+    secBtn: {
+        backgroundColor: 'lightyellow',
+        padding: 10,
+        fontSize: 20,
+        borderRadius: 10
+    },
+    secBtnText: {},
+    resultContainer: {
+        backgroundColor: '#fff',
+        margin: 20,
+        borderRadius: 10,
+        padding: 10,
+    },
+    resultLabel: {
+        fontWeight: 'bold'
+    },
+    intructionText: {},
+    passwordText: {
+        textAlign: 'center',
+        fontSize: 30,
+        fontWeight: 'black'
+    }
 })
