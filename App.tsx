@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ScrollView, StyleSheet, useColorScheme } from 'react-native'
+import { View, Text, SafeAreaView, ScrollView, StyleSheet, useColorScheme, StatusBar } from 'react-native'
 import React from 'react'
 import FlatCard from './components/FlatCard'
 import AppPro from './components/AppPro'
@@ -8,11 +8,14 @@ import ActionCards from './components/ActionCards'
 import PasswordGenerator from './components/PasswordGenerator'
 import BgChanger from './components/BgChanger'
 import DiceProject from './components/DiceProject'
+import CurrencyConverter from './components/CurrencyConverter'
 
 const App = () => {
   return (
     <SafeAreaView style={[styles.container]}>
+      <StatusBar />
       <ScrollView>
+        <CurrencyConverter />
         <DiceProject />
         <BgChanger />
         <PasswordGenerator />
