@@ -22,10 +22,10 @@ export default function CurrencyConverter() {
         <View>
             <Text>CurrencyConverter</Text>
             <FlatList
+                // ListHeaderComponent={<Text>Currency Converter</Text>}
                 data={CurrencyByRupee}
-                keyExtractor={item => item.name}
-                renderItem={({ item }) => (<CurrencyButton {...item} />)
-                }
+                keyExtractor={(item) => item.name}
+                renderItem={({ item }) => <CurrencyButton {...item} />}
             />
         </View>
     )
