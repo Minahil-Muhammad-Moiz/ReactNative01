@@ -9,10 +9,11 @@ import PasswordGenerator from './components/PasswordGenerator'
 import BgChanger from './components/BgChanger'
 import DiceProject from './components/DiceProject'
 import CurrencyConverter from './components/CurrencyConverter'
+import './global.css'
 
 const App = () => {
   return (
-    <SafeAreaView style={[styles.container]}>
+    <SafeAreaView style={[styles.container]} >
       <StatusBar />
         <CurrencyConverter />
       <ScrollView>
