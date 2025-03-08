@@ -1,5 +1,5 @@
-import { FlatList, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
+import React, { useState } from 'react'
 import type { PropsWithChildren } from 'react'
 import { CurrencyByRupee } from '../constants'
 
@@ -10,25 +10,43 @@ type CurrencyButtonProps = PropsWithChildren<{
 
 const CurrencyButton = (props: CurrencyButtonProps) => {
     return (
-        <View>
-            <Text>{props.symbol}</Text>
+        <View className='text-center p-4 '>
+            <Text className='text-center font-bold text-2xl'>{props.symbol}</Text>
             <Text>{props.name}</Text>
         </View>
     )
 }
 
 export default function CurrencyConverter() {
+    const [inputValue, setInputValue] = useState('')
+    const [output, setOutput] = useState('')
+    const [target, setTarget] = useState('')
+
+    const handleConvertion = (item: Currency) => {
+        if (!inputValue) return;
+        setTarget(item.name)
+        const convertedValue = (parseFloat(inputValue) * item.value).toFixed(4)
+        setOutput(`${inputValue} PKR = ${convertedValue} ${item.symbol} ${item.name}`)
+    }
+
     return (
-        <View>
-            <Text>CurrencyConverter</Text>
-            <FlatList
-                // ListHeaderComponent={<Text>Currency Converter</Text>}
-                data={CurrencyByRupee}
-                keyExtractor={(item) => item.name}
-                renderItem={({ item }) => <CurrencyButton {...item} />}
-            />
-        </View>
+        <>
+            <View className='bg-gray-200 py-4 rounded-lg text-pink-500 flex items-center justify-center gap-6'>
+                <Text className=' text-center font-bold text-2xl'>CurrencyConverter</Text>
+                {output && <Text className='text-2xl font-extrabold'>{output}</Text>}
+                <TextInput className='bg-gray-300 rounded-xl px-10 w-60 ' placeholder='Enter amount...' placeholderTextColor={'#f9fafb'} keyboardType='number-pad' value={inputValue} onChangeText={setInputValue} />
+                <FlatList
+                    numColumns={3}
+                    data={CurrencyByRupee}
+                    keyExtractor={(item) => item.name}
+                    className='mx-4'
+                    nestedScrollEnabled={true}
+                    renderItem={({ item }) =>
+                        <Pressable onPress={() => handleConvertion(item)} className={`${target === item.name ? 'bg-pink-400 ' : 'bg-[#f472b579] '} m-2 rounded-2xl`}>
+                            <CurrencyButton {...item} />
+                        </Pressable>}
+                />
+            </View>
+        </>
     )
 }
-
-const styles = StyleSheet.create({})

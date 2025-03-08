@@ -15,8 +15,8 @@ const App = () => {
   return (
     <SafeAreaView style={[styles.container]} >
       <StatusBar />
-        <CurrencyConverter />
       <ScrollView>
+        <CurrencyConverter />
         <DiceProject />
         <BgChanger />
         <PasswordGenerator />
