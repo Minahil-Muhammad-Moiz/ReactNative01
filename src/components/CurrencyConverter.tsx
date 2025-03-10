@@ -1,7 +1,7 @@
 import { FlatList, Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 import React, { useState } from 'react'
 import type { PropsWithChildren } from 'react'
-import { CurrencyByRupee } from '../constants'
+import { CurrencyByRupee } from '../../constants'
 
 type CurrencyButtonProps = PropsWithChildren<{
     name: String,
