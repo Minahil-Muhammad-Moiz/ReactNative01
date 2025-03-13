@@ -11,6 +11,7 @@ import DiceProject from './components/DiceProject'
 import CurrencyConverter from './components/CurrencyConverter'
 import '../global.css'
 import SplashScreen from 'react-native-splash-screen'
+import Chatbot from './components/Chatbot'
 
 const App = () => {
   useEffect(() => {
@@ -18,24 +19,19 @@ const App = () => {
   }, [])
 
   return (
-    <SafeAreaView style={[styles.container]} >
+    <SafeAreaView className='h-full' >
       <StatusBar hidden={false} translucent={true} />
-      <ScrollView>
+      <Chatbot />
+      <ScrollView className='h-full'>
         {/* <CurrencyConverter /> */}
-        <DiceProject />
-        <BgChanger />
-        <PasswordGenerator />
-        <ElevatedCards />
-        <ActionCards />
+        {/* <DiceProject /> */}
+        {/* <BgChanger /> */}
+        {/* <PasswordGenerator /> */}
+        {/* <ElevatedCards /> */}
+        {/* <ActionCards /> */}
       </ScrollView>
     </SafeAreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 20,
-  }
-})
 
 export default App
