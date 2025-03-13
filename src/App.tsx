@@ -19,7 +19,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={[styles.container]} >
-      <StatusBar />
+      <StatusBar hidden={false} translucent={true} />
       <ScrollView>
         {/* <CurrencyConverter /> */}
         <DiceProject />
