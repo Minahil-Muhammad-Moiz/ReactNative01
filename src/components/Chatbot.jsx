@@ -2,7 +2,6 @@ import { StyleSheet, Text, useColorScheme, View, Animated, FlatList } from 'reac
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY";  // Move API key to environment variables
 
 export default function Chatbot() {
     const isDark = useColorScheme() === 'dark';
